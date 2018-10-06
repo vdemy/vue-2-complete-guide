@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../js/vue.js"></script>
+</head>
+<body>
+  
+    <div id="app">
+        <div>
+          <button @click="show = !show">Toggle</button>
+            <p v-if="show">You either see me</p>
+            <p v-show="!show"> Or me</p>
+        </div>
+        <hr>
+        <ul>
+           <li v-for="(element, key) in elements">
+                {{key+1}}: {{element}}
+           </li>
+        </ul>
+        <hr>
+        <ul>
+          <li v-for="(value, key, index) in movie">{{key}}: {{value}} ({{index+1}})</li>
+        </ul>
+        <hr>
+         <ul>
+           <li v-for='(val, key, index) in obj'>
+             <ul v-if="key=='data'">
+               <li v-for="k in val"> {{k}} , </li>
+             </ul>
+             <p v-else>
+               {{val}}
+             </p>
+           </li>
+         </ul>
+      </div>
+    
+      <script src="app.js"></script>
+</body>
+</html>
+
